@@ -282,23 +282,23 @@
 					var trD = document.createElement("tr");
 					tbod.appendChild(trD);
 					var tdD = document.createElement("td");
-					tdD.innerHTML = document.getElementById("gname" + i).value + document.getElementById("sname" + i);
+					tdD.innerHTML = document.getElementById("gname" + i).value + " " + document.getElementById("sname" + i).value;
 					trD.appendChild(tdD);
 					var tdD2 = document.createElement("td");
-					if (document.getElementById("country" + i) == "USA"){
+					if (document.getElementById("country" + i).value == "USA"){
 						tdD2.innerHTML = document.getElementById("bmonth" + i).value + "/" + document.getElementById("bday" + i).value + "/" + document.getElementById("byear" + i).value;
-					}else if (document.getElementById("country" + i) == "China"){
+					}else if (document.getElementById("country" + i).value == "China"){
 						tdD2.innerHTML = document.getElementById("byear" + i).value + "/" + document.getElementById("bmonth" + i).value + "/" + document.getElementById("bday" + i).value;
 					}
 					trD.appendChild(tdD2);
 					var tdD3 = document.createElement("td");
-					tdD3.innerHTML = countryAge();
+					//tdD3.innerHTML = countryAge();
 					trD.appendChild(tdD3);
 					var tdD4 = document.createElement("td");
-					if (document.getElementById("country" + i) == "China"){
+					if (document.getElementById("country" + i).value == "China"){
 						tdD4.innerHTML = "Chinese";
-					}else if (document.getElementById("country" + i) == "USA"){
-						tdD4.innerHTML = "western";
+					}else if (document.getElementById("country" + i).value == "USA"){
+						tdD4.innerHTML = "Western";
 					}
 					trD.appendChild(tdD4);	
 				}
