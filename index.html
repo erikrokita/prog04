@@ -278,28 +278,30 @@
 			 function genTable(){
 				
 				//table data
-				var trD = document.createElement("tr");
-				tbod.appendChild(trD);
-				var tdD = document.createElement("td");
-				tdD.innerHTML = document.getElementById(gname + currentline).innerHTML + document.getElementById(sname + currentline);
-				trD.appendChild(tdD);
-				var tdD2 = document.createElement("td");
-				if (country == "USA"){}
-					tdD2.innerHTML = document.getElementById(bmonth + currentline).innerHTML + "/" + document.getElementById(bday + currentline).innerHTML + "/" + document.getElementById(byear + currentline).innerHTML;
-				}else if (country == "China"){
-					tdD2.innerHTML = document.getElementById(byear + currentline).innerHTML + "/" + document.getElementById(bmonth + currentline).innerHTML + "/" + document.getElementById(bday + currentline).innerHTML;
+				for(i = 0; i < currentLine; i++) {
+					var trD = document.createElement("tr");
+					tbod.appendChild(trD);
+					var tdD = document.createElement("td");
+					tdD.innerHTML = document.getElementById("gname" + i).value + document.getElementById("sname" + i);
+					trD.appendChild(tdD);
+					var tdD2 = document.createElement("td");
+					if (document.getElementById("country" + i) == "USA"){
+						tdD2.innerHTML = document.getElementById("bmonth" + i).value + "/" + document.getElementById("bday" + i).value + "/" + document.getElementById("byear" + i).value;
+					}else if (document.getElementById("country" + i) == "China"){
+						tdD2.innerHTML = document.getElementById("byear" + i).value + "/" + document.getElementById("bmonth" + i).value + "/" + document.getElementById("bday" + i).value;
+					}
+					trD.appendChild(tdD2);
+					var tdD3 = document.createElement("td");
+					tdD3.innerHTML = countryAge();
+					trD.appendChild(tdD3);
+					var tdD4 = document.createElement("td");
+					if (document.getElementById("country" + i) == "China"){
+						tdD4.innerHTML = "Chinese";
+					}else if (document.getElementById("country" + i) == "USA"){
+						tdD4.innerHTML = "western";
+					}
+					trD.appendChild(tdD4);	
 				}
-				trD.appendChild(tdD2);
-				var tdD3 = document.createElement("td");
-				tdD3.innerHTML = countryAge();
-				trD.appendChild(tdD3);
-				var tdD4 = document.createElement("td");
-				if (country == "China"){
-					tdD4.innerHTML = "Chinese";
-				}else if (country == "USA"){
-					tdD4.innerHTML = "western";
-				}
-				trD.appendChild(tdD4);				
 			 }
 		</script>
 	</body>
