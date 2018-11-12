@@ -24,24 +24,6 @@
 		<br>
 		<br>
 		<div id="div1">
-			<!--<form id="form1">
-				<fieldset id="fieldset1">
-					<legend>People </legend>
-					<label for="gname0">Given Name</label>
-					<input name="gname0" id="fname0" type="text" placeholder="Jane" size="10" autofocus="autofocus">
-					<label for="sname0">Surname </label>
-					<input name="sname0" id="lname0" type="text" placeholder="Doe" size="10">
-					<label for="bday0">Birth Day </label>
-					<input name="bday0" id="age0" type="number" placeholder="18" size="10">
-					<label for="bmonth0">Birth Month </label>
-					<input name="bmonth0" id="age0" type="number" placeholder="18" size="10">
-					<label for="byear0">Burth Year </label>
-					<input name="byear0" id="age0" type="number" placeholder="18" size="10">
-					<label for="country0">Country </label>
-					<input name="country0" id="country0" type="text" placeholder="USA" size="10">
-					<br>
-				</fieldset>
-			</form>-->
 		</div>
 			
 		<h1>Generate array of objects</h1>
@@ -69,28 +51,22 @@
 		<table border="1">
 			<tbody>
 				<tr>
-					<th>Given Name</th>
-					<th>Surname</th>
-					<th>Solar Birth Day</th>
-					<th>Solar Birth Month</th>
-					<th>Solar Birth Year</th>
-					<th>Country</th>
+					<th>Local Name</th>
+					<th>Local DOB</th>
+					<th>Local Age</th>
+					<th>Local Zodiac</th>
 				</tr>
 				<tr>
 					<td>Deng Xiaoping</td>
-					<td>Deng Xiaoping</td>
-					<td>08</td>
-					<td>22</td>
-					<td>1904</td>	
-					<td>?</td>
+					<td>1904-08-22</td>
+					<td>115</td>
+					<td>Dragon</td>
 				 </tr>
 				<tr>
 					<td>Dwight Eisenhower</td>
-					<td>Dwight Eisenhower</td>
-					<td>14</td>
-					<td>10</td>
-					<td>1890</td>
-					<td>?</td>
+					<td>10-14-1890</td>
+					<td>128</td>
+					<td>Libra</td>
 				</tr>
 			</tbody>
 		</table>
@@ -275,6 +251,16 @@
 			/* genTable()
 			 * generates an HTML table containing localized output from 
 			 */
+			 function genTable(){
+				var tab = document.createElement("table");
+				document.getElementById("div3").appendChild(tab);
+				var tbod = document.createElement("tbody");
+				tbod.appendChild(tab);
+				var tr = document.createElement("tr");
+				tr.appendChild(tbod);
+				var td = document.createElement("td");
+				td.appendChild(tr);
+			 }
 		</script>
 	</body>
 </html>
