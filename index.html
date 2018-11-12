@@ -284,14 +284,21 @@
 				tdD.innerHTML = document.getElementById(gname + currentline).innerHTML + document.getElementById(sname + currentline);
 				trD.appendChild(tdD);
 				var tdD2 = document.createElement("td");
-				tdD2.innerHTML = document.getElementById(bmonth + currentline).innerHTML + "/" + document.getElementById(bday + currentline).innerHTML + "/"; + document.getElementById(byear + currentline).innerHTML;
+				if (country == "USA"){}
+					tdD2.innerHTML = document.getElementById(bmonth + currentline).innerHTML + "/" + document.getElementById(bday + currentline).innerHTML + "/" + document.getElementById(byear + currentline).innerHTML;
+				}else if (country == "China"){
+					tdD2.innerHTML = document.getElementById(byear + currentline).innerHTML + "/" + document.getElementById(bmonth + currentline).innerHTML + "/" + document.getElementById(bday + currentline).innerHTML;
+				}
 				trD.appendChild(tdD2);
 				var tdD3 = document.createElement("td");
 				tdD3.innerHTML = countryAge();
 				trD.appendChild(tdD3);
 				var tdD4 = document.createElement("td");
-				if (country == "China"){ tdD4.innerHTML = "Chinese";}
-				else{tdD4.innerHTML = "western";}
+				if (country == "China"){
+					tdD4.innerHTML = "Chinese";
+				}else if (country == "USA"){
+					tdD4.innerHTML = "western";
+				}
 				trD.appendChild(tdD4);				
 			 }
 		</script>
