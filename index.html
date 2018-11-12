@@ -40,14 +40,14 @@
 		
 		<p>Loop through the HTML form lines and store the data into an array of objects, where each property of an object contains the data in the input field of the HTML entry form. </p>
 		
-		<button type="button" onclick="">Generate and Display Table</button>
+		<button type="button" onclick="genTable();">Generate and Display Table</button>
 		<br>
 		<br>
 		
 		<div id="div3">
 		</div>
 		
-		<!-- The table, below, shows examples of data. Do not include any HTML-coded table in your code. Instead, use JavaScript to append a table to the div, above. -->
+		<!-- The table, below, shows examples of data. Do not include any HTML-coded table in your code. Instead, use JavaScript to append a table to the div, above. 
 		<table border="1">
 			<tbody>
 				<tr>
@@ -69,7 +69,7 @@
 					<td>Libra</td>
 				</tr>
 			</tbody>
-		</table>
+		</table> -->
 
 		<script>
 			// GLOBAL VARIABLES
@@ -249,41 +249,50 @@
 			}
 			
 			//generate initial table elements
-			var tab = document.createElement("table");
-			n.setAttribute("border", "1");
-			document.getElementById("div3").appendChild(tab);
-			var tbod = document.createElement("tbody");
-			tbod.appendChild(tab);
-			var tr = document.createElement("tr");
-			tr.appendChild(tbod);
-			//table head
-			var th = document.createElement("th");
-			th.innerHTML = "Local Name"
-			th.appendChild(tr);
-			var th = document.createElement("th");
-			th.innerHTML = "Local DOB"
-			th.appendChild(tr);
-			var th = document.createElement("th");
-			th.innerHTML = "Local Age"
-			th.appendChild(tr);
-			var th = document.createElement("th");
-			th.innerHTML = "Local Zodiac"
-			th.appendChild(tr);
+				var tab = document.createElement("table");
+				tab.setAttribute("border", "1");
+				greg = document.getElementById("div3");
+				var tbod = document.createElement("tbody");
+				tab.appendChild(tbod);
+				var tr = document.createElement("tr");
+				tbod.appendChild(tr);
+				//table head
+				var th = document.createElement("th");
+				th.innerHTML = "Local Name";
+				tr.appendChild(th);
+				var th2 = document.createElement("th");
+				th2.innerHTML = "Local DOB";
+				tr.appendChild(th2);
+				var th3 = document.createElement("th");
+				th3.innerHTML = "Local Age";
+				tr.appendChild(th3);
+				var th4 = document.createElement("th");
+				th4.innerHTML = "Local Zodiac";
+				tr.appendChild(th4);
+			
+				greg.appendChild(tab);
 			
 			/* genTable()
 			 * generates an HTML table containing localized output from 
 			 */
 			 function genTable(){
-				//table data
-				var tr2 = document.createElement("tr");
-				tr2.appendChild(tbod);
-				var td = document.createElement("td");
-				td.appendChild(tr);
-				var td = document.createElement("td");
-				td.appendChild(tr);
-				var td = document.createElement("td");
-				td.appendChild(tr);
 				
+				//table data
+				var trD = document.createElement("tr");
+				tbod.appendChild(trD);
+				var tdD = document.createElement("td");
+				tdD.innerHTML = document.getElementById(gname + currentline).innerHTML + document.getElementById(sname + currentline);
+				trD.appendChild(tdD);
+				var tdD2 = document.createElement("td");
+				tdD2.innerHTML = document.getElementById(bmonth + currentline).innerHTML + "/" + document.getElementById(bday + currentline).innerHTML + "/"; + document.getElementById(byear + currentline).innerHTML;
+				trD.appendChild(tdD2);
+				var tdD3 = document.createElement("td");
+				tdD3.innerHTML = countryAge();
+				trD.appendChild(tdD3);
+				var tdD4 = document.createElement("td");
+				if (country == "China"){ tdD4.innerHTML = "Chinese";}
+				else{tdD4.innerHTML = "western";}
+				trD.appendChild(tdD4);				
 			 }
 		</script>
 	</body>
